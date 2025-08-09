@@ -1,0 +1,113 @@
+# Optimized Tapsi Food Map Dashboard Requirements
+# Core web framework
+Flask==2.3.3
+flask-cors==4.0.0
+
+# Data processing and analysis
+pandas==2.0.3
+numpy==1.24.3
+scipy==1.11.4
+
+# Geospatial data processing
+geopandas==0.13.2
+shapely==2.0.1
+
+# Database and caching
+sqlite3  # Built into Python
+schedule==1.2.0
+
+# HTTP requests for Metabase API
+requests==2.31.0
+urllib3==2.0.4
+
+# Production servers
+gunicorn==21.2.0  # For Linux/Unix production deployment
+waitress==2.1.2   # For Windows production deployment
+
+# Performance and optimization
+ujson==5.8.0      # Faster JSON serialization
+python-dotenv==1.0.0  # Environment variables support
+
+# Spatial indexing and performance (optional but recommended)
+rtree==1.0.1       # Requires GEOS library - improves spatial query performance
+# pygeos==0.14.0   # Alternative spatial operations (optional)
+
+# Development and debugging tools (optional)
+psutil==5.9.5      # System monitoring and resource usage
+memory-profiler==0.61.0  # Memory usage profiling
+
+# Additional utilities
+python-dateutil==2.8.2  # Better date parsing
+pytz==2023.3       # Timezone handling
+
+# Optional: Database alternatives (uncomment if needed)
+# psycopg2-binary==2.9.7  # PostgreSQL support
+# pymongo==4.5.0          # MongoDB support
+# redis==4.6.0             # Redis caching support
+
+# Optional: Advanced monitoring and logging
+# sentry-sdk==1.32.0       # Error tracking
+# prometheus-client==0.17.1 # Metrics collection
+
+# Optional: API documentation
+# flask-restx==1.1.0       # API documentation with Swagger
+# marshmallow==3.20.1      # Serialization/deserialization
+
+# Development dependencies (install with: pip install -r requirements-dev.txt)
+# pytest==7.4.2
+# pytest-cov==4.1.0
+# black==23.7.0
+# flake8==6.0.0
+# mypy==1.5.1
+
+# =============================================================================
+# Installation Instructions:
+# =============================================================================
+# 
+# 1. Basic installation:
+#    pip install -r requirements.txt
+#
+# 2. For development:
+#    pip install -r requirements.txt -r requirements-dev.txt
+#
+# 3. For production (minimal):
+#    pip install --no-deps -r requirements.txt
+#
+# 4. With all optional features:
+#    pip install -r requirements.txt rtree sentry-sdk prometheus-client
+#
+# =============================================================================
+# System Dependencies:
+# =============================================================================
+#
+# For full geospatial support, you may need to install system libraries:
+#
+# Ubuntu/Debian:
+#   sudo apt-get update
+#   sudo apt-get install -y python3-pip python3-dev
+#   sudo apt-get install -y gdal-bin libgdal-dev
+#   sudo apt-get install -y libspatialindex-dev  # For rtree
+#   sudo apt-get install -y proj-bin proj-data libproj-dev
+#   sudo apt-get install -y libgeos-dev libgeos++-dev
+#
+# CentOS/RHEL:
+#   sudo yum install -y python3-pip python3-devel
+#   sudo yum install -y gdal gdal-devel
+#   sudo yum install -y spatialindex-devel  # For rtree
+#   sudo yum install -y proj proj-devel
+#   sudo yum install -y geos geos-devel
+#
+# macOS (with Homebrew):
+#   brew install gdal
+#   brew install spatialindex  # For rtree
+#   brew install proj
+#   brew install geos
+#
+# Windows:
+#   - Install from OSGeo4W or conda-forge
+#   - Or use pre-compiled wheels from: https://www.lfd.uci.edu/~gohlke/pythonlibs/
+#
+# =============================================================================
+# Docker Installation:
+# =============================================================================
+# If using Docker, these dependencies are handled in the Dockerfile
